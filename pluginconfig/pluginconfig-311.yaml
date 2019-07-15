@@ -108,11 +108,11 @@ versions:
       clusterMonitoringOperator: registry.access.redhat.com/openshift3/ose-cluster-monitoring-operator:v3.11.104
       configReloader: registry.access.redhat.com/openshift3/ose-configmap-reloader:v3.11.104
       console: registry.access.redhat.com/openshift3/ose-console:v3.11.104
-      controlPlane: registry.access.redhat.com/openshift3/ose-control-plane:v3.11.104
+      controlPlane: quay.io/ycote/origin-control-plane:latest
       grafana: registry.access.redhat.com/openshift3/grafana:v3.11.104
       kubeRbacProxy: registry.access.redhat.com/openshift3/ose-kube-rbac-proxy:v3.11.104
       kubeStateMetrics: registry.access.redhat.com/openshift3/ose-kube-state-metrics:v3.11.104
-      node: registry.access.redhat.com/openshift3/ose-node:v3.11.104
+      node: quay.io/ycote/origin-node:latest
       nodeExporter: registry.access.redhat.com/openshift3/prometheus-node-exporter:v3.11.104
       oAuthProxy: registry.access.redhat.com/openshift3/oauth-proxy:v3.11.104
       prometheus: registry.access.redhat.com/openshift3/prometheus:v3.11.104
@@ -120,9 +120,9 @@ versions:
       prometheusOperator: registry.access.redhat.com/openshift3/ose-prometheus-operator:v3.11.104
       registry: registry.access.redhat.com/openshift3/ose-docker-registry:v3.11.104
       registryConsole: registry.access.redhat.com/openshift3/registry-console:v3.11.104
-      router: registry.access.redhat.com/openshift3/ose-haproxy-router:v3.11.104
+      router: quay.io/ycote/origin-haproxy-router:latest
       serviceCatalog: registry.access.redhat.com/openshift3/ose-service-catalog:v3.11.104
-      templateServiceBroker: registry.access.redhat.com/openshift3/ose-template-service-broker:v3.11.104
+      templateServiceBroker: quay.io/ycote/origin-template-service-broker:latest
       webConsole: registry.access.redhat.com/openshift3/ose-web-console:v3.11.104
       format: registry.access.redhat.com/openshift3/ose-${component}:v3.11.104
       httpd: registry.access.redhat.com/rhscl/httpd-24-rhel7:2.4-86

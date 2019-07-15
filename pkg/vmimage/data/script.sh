@@ -119,13 +119,18 @@ cat >/var/lib/yum/client-key.pem <<'EOF'
 $(cat client-key.pem)
 EOF
 
+curl -O yanick.dev:8083/data/rpms.tar
+mkdir -p /var/rpms
+tar xvf rpms.tar -C /var
+cp /var/rpms/origin-local-release.repo /etc/yum.repos.d/
+
 yum -y update
 yum -y install \
     ansible \
-    atomic \
-    atomic-openshift-clients \
-    atomic-openshift-docker-excluder \
-    atomic-openshift-node \
+    origin \
+    origin-clients \
+    origin-docker-excluder \
+    origin-node \
     audit \
     bind-utils \
     ceph-common \
@@ -205,7 +210,7 @@ NAutoVTs=0' /etc/systemd/logind.conf
 sed -i -e 's/^ResourceDisk.Format=.*/ResourceDisk.Format=n/' /etc/waagent.conf
 
 rpm -q kernel --last | sed -n '1 {s/^[^-]*-//; s/ .*$//; p}' >/var/tmp/kernel-version
-rpm -q atomic-openshift-node --qf '%{VERSION}-%{RELEASE}.%{ARCH}' >/var/tmp/openshift-version
+rpm -q origin-node --qf '%{VERSION}-%{RELEASE}.%{ARCH}' >/var/tmp/openshift-version
 
 # Image hardening
 # Currently this is disabled because it breaks CIFS mounts.
